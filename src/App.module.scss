@@ -1,0 +1,73 @@
+@import './styles/variables';
+@import './styles/mixins';
+
+.app {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.header {
+    background: white;
+    padding: 1.5rem 0;
+    box-shadow: $shadow-sm;
+    margin-bottom: 2rem;
+
+    h1 {
+        font-size: 1.75rem;
+        color: $primary-color;
+        font-weight: 800;
+    }
+
+    @include mobile {
+        padding: 1rem 0;
+        margin-bottom: 1rem;
+
+        h1 {
+            font-size: 1.25rem;
+        }
+    }
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 2rem;
+    align-items: start;
+
+    @include tablet {
+        grid-template-columns: 1fr;
+    }
+
+    @include mobile {
+        gap: 1rem;
+    }
+}
+
+.sidebarSection {
+    position: sticky;
+
+    @include tablet {
+        position: static;
+    }
+}
+
+.mainSection {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer {
+    margin-top: auto;
+    background: white;
+    padding: 2rem 0;
+    text-align: center;
+    border-top: 1px solid $border-color;
+    color: $muted-text;
+    font-size: 0.9rem;
+
+    @include mobile {
+        padding: 1rem 0;
+        font-size: 0.8rem;
+    }
+}

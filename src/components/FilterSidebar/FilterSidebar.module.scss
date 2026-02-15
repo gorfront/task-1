@@ -1,0 +1,116 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.sidebar {
+    @include card;
+    width: 100%;
+
+    @include mobile {
+        padding: 0.75rem;
+    }
+}
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid $border-color;
+    padding-bottom: 1rem;
+
+    h2 {
+        font-size: 1.25rem;
+        color: $text-color;
+    }
+}
+
+.resetButton {
+    color: $primary-color;
+    font-size: 0.9rem;
+    font-weight: 500;
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
+
+.section {
+    margin-bottom: 2rem;
+
+    h3 {
+        font-size: 1rem;
+        margin-bottom: 1rem;
+        color: $text-color;
+    }
+
+    @include mobile {
+        margin-bottom: 1rem;
+
+        h3 {
+            margin-bottom: 0.5rem;
+        }
+    }
+}
+
+.options {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.checkboxLabel {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.9rem;
+    color: $text-color;
+    cursor: pointer;
+
+    input {
+        cursor: pointer;
+    }
+}
+
+.priceInputs {
+    display: flex;
+    gap: 1rem;
+}
+
+.inputGroup {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    label {
+        font-size: 0.8rem;
+        color: $muted-text;
+    }
+
+    input {
+        width: 100%;
+        padding: 0.5rem;
+        border: 1px solid $border-color;
+        border-radius: 4px;
+        font-size: 0.9rem;
+
+        &:focus {
+            outline: none;
+            border-color: $primary-color;
+        }
+    }
+}
+
+.select {
+    width: 100%;
+    padding: 0.5rem;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: white;
+    font-size: 0.9rem;
+
+    &:focus {
+        outline: none;
+        border-color: $primary-color;
+    }
+}

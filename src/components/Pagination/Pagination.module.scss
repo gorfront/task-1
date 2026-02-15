@@ -1,0 +1,75 @@
+@import '../../styles/variables';
+@import '../../styles/mixins';
+
+.pagination {
+    @include flex-center;
+    gap: 1.5rem;
+    margin-top: 3rem;
+    padding: 2rem 0;
+
+    @include mobile {
+        gap: 0.5rem;
+        margin-top: 1.5rem;
+        padding: 1rem 0;
+        flex-wrap: wrap;
+    }
+}
+
+.pageNumbers {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.pageButton {
+    width: 40px;
+    height: 40px;
+    @include flex-center;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: white;
+    color: $text-color;
+    font-weight: 500;
+    transition: $transition-base;
+
+    &:hover {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
+
+    &.active {
+        background: $primary-color;
+        color: white;
+        border-color: $primary-color;
+    }
+
+    @include mobile {
+        width: 32px;
+        height: 32px;
+        font-size: 0.8rem;
+    }
+}
+
+.navButton {
+    padding: 0.5rem 1rem;
+    border: 1px solid $border-color;
+    border-radius: 4px;
+    background: white;
+    color: $text-color;
+    font-weight: 500;
+    transition: $transition-base;
+
+    &:disabled {
+        opacity: 0.5;
+        cursor: not-allowed;
+    }
+
+    &:not(:disabled):hover {
+        border-color: $primary-color;
+        color: $primary-color;
+    }
+
+    @include mobile {
+        padding: 0.4rem 0.75rem;
+        font-size: 0.8rem;
+    }
+}
